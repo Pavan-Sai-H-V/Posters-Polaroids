@@ -53,59 +53,59 @@ const SubscriptionCards = () => {
   ]
 
   return (
-    <section className='flex flex-col items-center px-4 py-16 md:py-24'>
-      <h1 className='text-3xl md:text-4xl lg:text-5xl font-semibold text-center'>
+    <section className='flex flex-col items-center px-4 py-8 md:py-16 lg:py-24'>
+      <h1 className='text-2xl md:text-4xl lg:text-5xl font-semibold text-center'>
         Choose Your Subscription
       </h1>
-      <p className="text-center mt-3 text-gray-600 dark:text-gray-400 max-w-xl">
+      <p className="text-center mt-2 md:mt-3 text-sm md:text-base text-gray-600 dark:text-gray-400 max-w-xl">
         Simple plans. Premium quality. Delivered every month to your doorstep.
       </p>
-      
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 w-full max-w-7xl'>
+
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-6 md:mt-10 w-full max-w-7xl'>
         {plans.map((plan, index) => (
           <div key={index} className="flex justify-center">
             <Card className={`w-full max-w-sm flex flex-col ${plan.popular ? 'border-2 border-primary shadow-lg' : ''}`}>
-              <CardHeader className="space-y-2">
+              <CardHeader className="space-y-1.5 md:space-y-2 p-4 md:p-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-muted-foreground">
+                  <span className="text-xs md:text-sm font-medium text-muted-foreground">
                     {plan.badge}
                   </span>
                   {plan.popular && (
-                    <span className="bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
+                    <span className="bg-primary text-primary-foreground text-xs font-semibold px-2 md:px-3 py-0.5 md:py-1 rounded-full">
                       Best Value
                     </span>
                   )}
                 </div>
-                <CardTitle className="text-2xl">{plan.title}</CardTitle>
+                <CardTitle className="text-lg md:text-2xl">{plan.title}</CardTitle>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold">{plan.price}</span>
-                  <span className="text-muted-foreground">/{plan.period}</span>
+                  <span className="text-3xl md:text-4xl font-bold">{plan.price}</span>
+                  <span className="text-sm md:text-base text-muted-foreground">/{plan.period}</span>
                 </div>
               </CardHeader>
-              
-              <CardContent className="flex-1 space-y-4">
-                <div className="space-y-3">
-                  <h4 className="font-semibold text-sm">Plan Highlights:</h4>
-                  <ul className="space-y-2">
+
+              <CardContent className="flex-1 space-y-3 md:space-y-4 p-4 md:p-6">
+                <div className="space-y-2 md:space-y-3">
+                  <h4 className="font-semibold text-xs md:text-sm">Plan Highlights:</h4>
+                  <ul className="space-y-1.5 md:space-y-2">
                     {plan.highlights.map((highlight, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm">
-                        <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <li key={idx} className="flex items-start gap-2 text-xs md:text-sm">
+                        <Check className="h-4 w-4 md:h-5 md:w-5 text-primary flex-shrink-0 mt-0.5" />
                         <span>{highlight}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                
-                <div className="pt-4 border-t">
-                  <p className="text-sm">
+
+                <div className="pt-3 md:pt-4 border-t">
+                  <p className="text-xs md:text-sm">
                     <span className="font-semibold">Best For: </span>
                     <span className="text-muted-foreground">{plan.bestFor}</span>
                   </p>
                 </div>
               </CardContent>
-              
-              <CardFooter>
-                <button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-3 rounded-md font-semibold transition-colors">
+
+              <CardFooter className="p-4 md:p-6">
+                <button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-2.5 md:py-3 rounded-md text-sm md:text-base font-semibold transition-colors">
                   Subscribe Now
                 </button>
               </CardFooter>
