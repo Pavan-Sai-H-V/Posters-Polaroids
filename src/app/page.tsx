@@ -21,7 +21,7 @@ const Home = () => {
 
       {/* Hero CTA */}
 
-      <div className="mt-8 md:mt-10 2xl:mt-5 flex flex-wrap items-center gap-6 md:gap-10 flex-col px-4">
+      <div className="mt-2 md:mt-10 2xl:mt-5 flex flex-wrap items-center gap-6 md:gap-10 flex-col px-4">
         <div className='text-center text-base md:text-lg font-semibold max-w-md'>"Capture your every day.print your every Month"</div>
 
         <HoverBorderGradient

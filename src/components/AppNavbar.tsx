@@ -37,9 +37,9 @@ const handleAnimationComplete = () => {
 // Navigation links configuration
 const navLinks = [
   { label: 'Home', href: '#home' },
-  { label: 'Posters & Polaroids', href: '#posters-polaroids' },
+  { label: 'P&P', href: '#posters-polaroids' },
   { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Subscriptions', href: '#subscriptions' },
+  { label: 'Pricing', href: '#subscriptions' },
   { label: 'Reviews', href: '#reviews' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -142,7 +142,7 @@ const AppNavbar = () => {
         </div>
 
         {/* Desktop Right Side Menu */}
-        <div className='hidden md:flex items-center gap-4'>
+        <div className='hidden lg:flex items-center gap-4'>
           <Link href='mailto:shadygraph@gmail.com' className='text-sm hover:text-primary transition-colors'>
             shadygraph@gmail.com
           </Link>
@@ -191,7 +191,7 @@ const AppNavbar = () => {
         </div>
 
         {/* Mobile - Profile Icon triggers sidebar */}
-        <div className='md:hidden'>
+        <div className='lg:hidden'>
           <SidebarTrigger>
             <Avatar className="cursor-pointer">
               <AvatarImage src='https://media.istockphoto.com/id/508471121/photo/praying-businessman.jpg?s=1024x1024&w=is&k=20&c=2t-E6ca7QugOwtC-_BPEEoTPZG10kfsoIjgDZT6gv1o=' />
@@ -202,7 +202,7 @@ const AppNavbar = () => {
       </nav>
 
       {/* Mobile Sidebar */}
-      <Sidebar side="right" collapsible="offcanvas" className="md:hidden">
+      <Sidebar side="right" collapsible="offcanvas" className="lg:hidden">
         <SidebarHeader className="border-b">
           <div className="flex items-center gap-2 px-2 py-2">
             <Image src={logoSrc} alt='Logo' width={30} height={30} />
