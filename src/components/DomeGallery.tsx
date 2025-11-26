@@ -143,7 +143,7 @@ export default function DomeGallery({
   images = DEFAULT_IMAGES,
   fit = 0.5,
   fitBasis = 'auto',
-  minRadius = typeof window !== 'undefined' && window.innerWidth <= 640 ? 400 : 500,
+  minRadius = typeof window !== 'undefined' && window.innerWidth <= 640 ? 375 : 500,
   maxRadius = Infinity,
   padFactor = 0.25,
   overlayBlurColor = '#060010',
@@ -262,8 +262,11 @@ export default function DomeGallery({
           const tempRect = tempDiv.getBoundingClientRect();
           document.body.removeChild(tempDiv);
 
-          const centeredLeft = frameR.left - mainR.left + (frameR.width - tempRect.width) / 2;
-          const centeredTop = frameR.top - mainR.top + (frameR.height - tempRect.height) / 2;
+          // Center in viewport instead of frame for better mobile positioning
+          const viewportWidth = window.innerWidth;
+          const viewportHeight = window.innerHeight;
+          const centeredLeft = (viewportWidth - tempRect.width) / 2 - mainR.left;
+          const centeredTop = (viewportHeight - tempRect.height) / 2 - mainR.top;
 
           enlargedOverlay.style.left = `${centeredLeft}px`;
           enlargedOverlay.style.top = `${centeredTop}px`;
@@ -505,8 +508,11 @@ export default function DomeGallery({
         overlay.style.height = frameR.height + 'px';
         void overlay.offsetWidth;
         overlay.style.transition = `left ${enlargeTransitionMs}ms ease, top ${enlargeTransitionMs}ms ease, width ${enlargeTransitionMs}ms ease, height ${enlargeTransitionMs}ms ease`;
-        const centeredLeft = frameR.left - mainR.left + (frameR.width - newRect.width) / 2;
-        const centeredTop = frameR.top - mainR.top + (frameR.height - newRect.height) / 2;
+        // Use viewport-based centering for consistent mobile positioning
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        const centeredLeft = (viewportWidth - newRect.width) / 2 - mainR.left;
+        const centeredTop = (viewportHeight - newRect.height) / 2 - mainR.top;
         requestAnimationFrame(() => {
           overlay.style.left = `${centeredLeft}px`;
           overlay.style.top = `${centeredTop}px`;
