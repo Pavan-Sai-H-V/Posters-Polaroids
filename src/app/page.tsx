@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div className='flex flex-col w-screen'>
       {/* Home Section - DomeGallery */}
-      <section id="home" className="md:h-[85vh] h-[70vh] sm:h-[50vh] flex items-center justify-center">
+      <section id="home" className="md:h-[85vh] h-[70vh] sm:h-[50vh] flex items-center justify-center pt-16 md:pt-0">
         <DomeGallery />
       </section>
 
